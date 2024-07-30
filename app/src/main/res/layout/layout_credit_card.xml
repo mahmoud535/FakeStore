@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_credit_card_back"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_credit_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_magnetic_tape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_magnetic_tape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_cvc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_24dp"
+            android:background="@color/white"
+            android:padding="@dimen/padding_4dp"
+            android:text="245"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_magnetic_tape" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:text="@string/text_cvc"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_cvc"
+            app:layout_constraintEnd_toStartOf="@id/tv_cvc"
+            app:layout_constraintTop_toTopOf="@id/tv_cvc" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_credit_card"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_credit_card"
+        android:padding="@dimen/padding_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_card_chip"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="55dp"
+            android:src="@drawable/ic_card_chip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/left"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/leftarrow"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_card_chip"
+            app:layout_constraintEnd_toStartOf="@+id/iv_card_chip"
+            app:layout_constraintTop_toTopOf="@+id/iv_card_chip" />
+        <ImageView
+            android:id="@+id/contact"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/contactless"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_card_chip"
+            app:layout_constraintStart_toEndOf="@+id/iv_card_chip"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:id="@+id/bnkmisr"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="-4dp"
+            android:src="@drawable/bbk"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_visa"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/textvv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Debit"
+            android:layout_marginTop="-5dp"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <TextView
+            android:id="@+id/tv_card_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16dp"
+            android:layout_marginTop="2dp"
+            android:letterSpacing="0.1"
+            android:maxLength="19"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:text="@string/placeholder_card_number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_card_chip" />
+
+        <TextView
+            android:id="@+id/tv_card_holder_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/text_card_holder_name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_expiry_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder_expiry_date"
+            android:layout_marginTop="-4dp"
+            android:layout_marginEnd="100dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_card_number"
+            app:layout_constraintTop_toBottomOf="@+id/tv_card_number" />
+
+        <TextView
+            android:id="@+id/tv_expiry_date_label"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="VALID THRU"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_expiry_date"
+            app:layout_constraintEnd_toStartOf="@+id/tv_expiry_date"
+            app:layout_constraintTop_toTopOf="@+id/tv_expiry_date" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

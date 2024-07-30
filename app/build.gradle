@@ -1,0 +1,83 @@
+plugins {
+    alias libs.plugins.android.application
+    alias libs.plugins.kotlin.android
+    alias libs.plugins.nav.safe.args
+    alias libs.plugins.kotlin.kapt
+    alias libs.plugins.hilt.android
+    alias libs.plugins.kotlin.serialization
+    alias libs.plugins.kotlin.parcelize
+    alias libs.plugins.ksp
+}
+
+android {
+    namespace 'com.example.fakestore'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.fakestore"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField ("String", "BASE_URL", "\"https://fakestoreapi.com/\"")
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+
+    // Navigation
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+
+    // Hilt
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+
+    // Ktor client
+    implementation libs.bundles.ktor
+
+    // Room DB
+    implementation libs.room.runtime
+    ksp libs.room.compiler
+    implementation libs.room.ktx
+
+    // Glide
+    implementation libs.glide
+
+    // Lottie animation
+    implementation libs.lottie
+
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}
